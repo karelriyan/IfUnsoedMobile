@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Halaman2Activity">
+
+    <ImageView
+        android:id="@+id/iv_gedung_teknik"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/teknik_unsoed_2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_logo_unsoed"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/lambang_unsoed"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_gedung_teknik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_gedung_teknik" />
+
+    <TextView
+        android:id="@+id/tv_title_profil"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp" android:background="@color/colorSecondary"
+        android:padding="4dp"
+        android:text="Profil Lulusan"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo_unsoed" /> <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_marginTop="8dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/iv_gedung_teknik"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/material_dynamic_primary90"
+        app:cardCornerRadius="8dp">
+
+        <TextView
+            android:id="@+id/tv_lulusan"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:justificationMode="inter_word"
+            android:padding="16dp"
+            android:text="Lulusan Program Studi Informatika Unsoed sebagian besar..."
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/linear_layout_profil"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/layout_phone"
+            layout="@layout/layout_menu" />
+        <include
+            android:id="@+id/layout_email"
+            layout="@layout/layout_menu" />
+        <include
+            android:id="@+id/layout_location"
+            layout="@layout/layout_menu" />
+        <include
+            android:id="@+id/layout_ig"
+            layout="@layout/layout_menu" />
+
+    </LinearLayout>
+</LinearLayout>
+</ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="@string/back"
+        android:layout_marginLeft="8dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
