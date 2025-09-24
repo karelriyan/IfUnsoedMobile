@@ -5,4 +5,4 @@ Tugas 1 Pertemuan 2<br>
 ![Screenshot Aplikasi Saya](ss_bukti.png)<br>
 
 Tugas 2 Pertemuan 3<br>
-![Bukti Gif](pertemuan3.gif)<br>
+![Bukti Gif](Screen_recording_20250924_085308.gif)<br>
