@@ -1,8 +1,8 @@
 Nama: Karel Tsalasatir Riyan<br>
-NIM: H1D023085
+NIM: H1D023085<br><br>
 
-Tugas 1 Pertemuan 2
-![Screenshot Aplikasi Saya](ss_bukti.png)
+Tugas 1 Pertemuan 2<br>
+![Screenshot Aplikasi Saya](ss_bukti.png)<br>
 
-Tugas 2 Pertemuan 3
-![Bukti Gif](pertemuan3.gif)
+Tugas 2 Pertemuan 3<br>
+![Bukti Gif](pertemuan3.gif)<br>
