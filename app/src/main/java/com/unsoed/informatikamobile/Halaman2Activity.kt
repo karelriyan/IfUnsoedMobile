@@ -1,12 +1,11 @@
 package com.unsoed.informatikamobile
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.ifunsoedmobile.R
 import com.example.ifunsoedmobile.databinding.ActivityHalaman2Binding
+import android.content.Intent
+import androidx.core.net.toUri
 
 class Halaman2Activity : AppCompatActivity() {
     private lateinit var binding: ActivityHalaman2Binding
@@ -18,7 +17,70 @@ class Halaman2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        setContentView(binding.root)
         binding = ActivityHalaman2Binding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        initLayout()
+        initListener()
+    }
+
+    private fun initLayout() {
+        binding.layoutLocation.let {
+            it.imgIcon.setImageResource(R.drawable.ic_location)
+            it.tvLayout.setText(R.string.alamat)
+        }
+
+        binding.layoutEmail.let {
+            it.imgIcon.setImageResource(R.drawable.ic_email)
+            it.tvLayout.setText(R.string.email)
+        }
+
+        binding.layoutIg.let {
+            it.imgIcon.setImageResource(R.drawable.ic_himpunan)
+            it.tvLayout.setText(R.string.ig_himpunan)
+        }
+
+        binding.layoutPhone.let {
+            it.imgIcon.setImageResource(R.drawable.ic_phone)
+            it.tvLayout.setText(R.string.telepon)
+        }
+    }
+
+    private fun initListener() {
+        // Lokasi
+        binding.layoutLocation.root.setOnClickListener {
+            val gMapsIntentUri = "$gMapsUrl$latitude,$longitude".toUri()
+            val mapIntent = Intent(Intent.ACTION_VIEW, gMapsIntentUri)
+            mapIntent.setPackage(packageMaps)
+            startActivity(mapIntent)
+        }
+
+        // Instagram
+        binding.layoutIg.root.setOnClickListener {
+            val igUri = getString(R.string.ig_himpunan).toUri()
+            val intent = Intent(Intent.ACTION_VIEW, igUri)
+            startActivity(intent)
+        }
+
+        // Email
+        binding.layoutEmail.root.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = "mailto:${getString(R.string.email)}".toUri()
+            }
+            startActivity(intent)
+        }
+
+        // Telepon
+        binding.layoutPhone.root.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL).apply {
+                data = "tel:${getString(R.string.telepon)}".toUri()
+            }
+            startActivity(intent)
+        }
+
+        // Tombol Back
+        binding.btnBack.setOnClickListener {
+            finish()
+        }
     }
 }
