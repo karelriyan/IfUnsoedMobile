@@ -8,4 +8,4 @@ Tugas 2 Pertemuan 3<br>
 ![Bukti Gif](Screen_recording_20250924_085308.gif)<br>
 
 Tugas 3 Pertemuan 4<br>
-![Bukti Gif](Screen_recording_20250924_085308.gif)<br>
+![Bukti Gif](Screen_recording_20250929_113721.gif)<br>
