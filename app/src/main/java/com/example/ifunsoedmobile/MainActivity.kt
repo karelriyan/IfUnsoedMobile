@@ -3,7 +3,7 @@ package com.example.ifunsoedmobile
 import android.content.Intent // Ditambahkan: Import untuk kelas Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ifunsoedmobile.databinding.ActivityMainBinding // Ditambahkan: Import untuk kelas binding
+import com.unsoed.informatikamobile.databinding.ActivityMainBinding // Ditambahkan: Import untuk kelas binding
 import com.unsoed.informatikamobile.Halaman2Activity
 
 class MainActivity : AppCompatActivity() {

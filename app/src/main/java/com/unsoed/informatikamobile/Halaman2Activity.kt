@@ -2,8 +2,7 @@ package com.unsoed.informatikamobile
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.ifunsoedmobile.R
-import com.example.ifunsoedmobile.databinding.ActivityHalaman2Binding
+import com.unsoed.informatikamobile.databinding.ActivityHalaman2Binding
 import android.content.Intent
 import androidx.core.net.toUri
 

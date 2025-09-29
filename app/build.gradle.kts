@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.ifunsoedmobile"
+    namespace = "com.unsoed.informatikamobile"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.ifunsoedmobile"
+        applicationId = "com.unsoed.informatikamobile"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -49,4 +49,10 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.ktx)
 }
