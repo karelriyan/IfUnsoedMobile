@@ -5,14 +5,14 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.unsoed.informatikamobile.data.model.BookDoc
 import com.unsoed.informatikamobile.data.network.RetrofitInstance
 import kotlinx.coroutines.launch
-import com.unsoed.informatikamobile.model.Book
 
 class MainViewModel : ViewModel() {
 
-    private val _books = MutableLiveData<List<Book>>()
-    val books: LiveData<List<Book>> = _books
+    private val _books = MutableLiveData<List<BookDoc>>()
+    val books: LiveData<List<BookDoc>> = _books
 
     fun fetchBooks(query: String) {
         viewModelScope.launch {
@@ -23,10 +23,11 @@ class MainViewModel : ViewModel() {
 
                     // Map dari BookDoc -> Book
                     val mappedResult = result.map { doc ->
-                        Book(
+                        BookDoc(
                             title = doc.title,
                             authorName = doc.authorName,
-                            firstPublishYear = doc.firstPublishYear
+                            firstPublishYear = doc.firstPublishYear,
+                            coverId = doc.coverId
                         )
                     }
 

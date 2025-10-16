@@ -1,16 +1,18 @@
 package com.unsoed.informatikamobile.ui.adapter
 
-import com.unsoed.informatikamobile.model.Book
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.unsoed.informatikamobile.data.model.BookDoc
 import com.unsoed.informatikamobile.databinding.ListBukuBinding
 
-class BookAdapter(private var books: List<Book>) :
-    RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
+class BookAdapter(
+    private var books: List<BookDoc>,
+    private val listener: OnBookClickListener
+) : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
-    inner class BookViewHolder(val binding: ListBukuBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class BookViewHolder(val binding: ListBukuBinding)
+        : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
         val binding = ListBukuBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -21,13 +23,22 @@ class BookAdapter(private var books: List<Book>) :
 
     override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         val book = books[position]
-        holder.binding.tvTitle.text = book.title ?: "No Title"
-        holder.binding.tvAuthor.text = book.authorName?.joinToString(separator = ", ") ?: "Unknown Author"
-        holder.binding.tvYear.text = book.firstPublishYear?.toString() ?: "- -"
+        holder.binding.tvTitle.text = book.title ?: "-"
+        holder.binding.tvAuthor.text = book.authorName?.joinToString(", ") ?: "Unknown Author"
+        holder.binding.tvYear.text = book.firstPublishYear?.toString() ?: "-"
+
+
+        holder.binding.root.setOnClickListener {
+            listener.onBookClick(book)
+        }
     }
 
-    fun setData(newBooks: List<Book>) {
-        this.books = newBooks
+    fun setData(newBooks: List<BookDoc>) {
+        books = newBooks
         notifyDataSetChanged()
+    }
+
+    interface OnBookClickListener {
+        fun onBookClick(book: BookDoc)
     }
 }
